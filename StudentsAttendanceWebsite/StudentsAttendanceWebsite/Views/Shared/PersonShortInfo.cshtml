@@ -1,0 +1,33 @@
+﻿@model StudentsAttendanceWebsite.Models.Person
+
+<style>
+    .element {
+        margin: 20px;
+        background-color: darkkhaki;
+        font-size: 20px;
+        flex-wrap: wrap;
+    }
+</style>
+
+<div class="element" style="display:flex;padding:20px;">
+    <div style="width:100%;display:flex;flex-wrap:wrap;">
+        <div style="width:100%;text-align:center;">
+            <div>@Model.FullName</div>
+        </div>
+        <div style="width:100%;">
+            <div style="margin-bottom:15px;">Дата рождения: @Model.PhoneNumber</div>
+            <div>Почта: @Model.Email</div>
+        </div>
+        <div style="width:100%;text-align:center;">
+            @using (Html.BeginForm("Delete", "Users", new { id = Model.Id }, FormMethod.Post))
+            {
+                if (User.IsInRole("Администратор"))
+                {
+                    <a class="btn btn-default" href="/users/edit/@Model.Id">Изменить</a>
+                    <input type="submit" value="Удалить" class="btn btn-default" />
+                }
+                <a class="btn btn-default" href="/users/details/@Model.Id">Подробнее</a>
+            }
+        </div>
+    </div>
+</div>

@@ -2,7 +2,8 @@
     <li><a class="text-uppercase" href="/myprofile/index">Личный кабинет</a></li>
     @if (User.IsInRole("Администратор"))
     {
-
+        <li><a class="text-uppercase" href="/users/index">Список пользователей</a></li>
+        <li><a class="text-uppercase" href="/users/create">Регистрация пользователя</a></li>
     }
     @if (User.IsInRole("Учитель"))
     {
