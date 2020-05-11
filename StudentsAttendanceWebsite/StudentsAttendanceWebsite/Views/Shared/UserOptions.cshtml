@@ -1,0 +1,14 @@
+﻿<ul>
+    <li><a class="text-uppercase" href="/myprofile/index">Личный кабинет</a></li>
+    @if (User.IsInRole("Администратор"))
+    {
+
+    }
+    @if (User.IsInRole("Учитель"))
+    {
+    }
+    @if (User.IsInRole("Ученик"))
+    {
+    }
+
+</ul>
