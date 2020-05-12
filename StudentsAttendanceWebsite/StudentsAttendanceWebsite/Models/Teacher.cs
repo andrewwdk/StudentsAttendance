@@ -14,8 +14,16 @@ namespace StudentsAttendanceWebsite.Models
     
     public partial class Teacher
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Teacher()
+        {
+            this.Lesson = new HashSet<Lesson>();
+        }
+    
         public int PersonId { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Lesson> Lesson { get; set; }
         public virtual Person Person { get; set; }
     }
 }

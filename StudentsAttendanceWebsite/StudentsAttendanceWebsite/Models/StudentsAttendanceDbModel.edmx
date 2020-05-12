@@ -153,6 +153,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Lesson_Teacher">
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="Lesson" Type="Self.Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="TeacherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Student_Group">
           <End Role="Group" Type="Self.Group" Multiplicity="0..1" />
           <End Role="Student" Type="Self.Student" Multiplicity="*" />
@@ -247,6 +259,10 @@
             <End Role="Subject" EntitySet="Subject" />
             <End Role="Lesson" EntitySet="Lesson" />
           </AssociationSet>
+          <AssociationSet Name="FK_Lesson_Teacher" Association="Self.FK_Lesson_Teacher">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="Lesson" EntitySet="Lesson" />
+          </AssociationSet>
           <AssociationSet Name="FK_Student_Group" Association="Self.FK_Student_Group">
             <End Role="Group" EntitySet="Group" />
             <End Role="Student" EntitySet="Student" />
@@ -315,6 +331,7 @@
           <NavigationProperty Name="Attendance" Relationship="Self.FK_Attendance_Lesson" FromRole="Lesson" ToRole="Attendance" />
           <NavigationProperty Name="Group" Relationship="Self.FK_Lesson_Group" FromRole="Lesson" ToRole="Group" />
           <NavigationProperty Name="Subject" Relationship="Self.FK_Lesson_Subject" FromRole="Lesson" ToRole="Subject" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK_Lesson_Teacher" FromRole="Lesson" ToRole="Teacher" />
         </EntityType>
         <EntityType Name="Person">
           <Key>
@@ -373,6 +390,7 @@
             <PropertyRef Name="PersonId" />
           </Key>
           <Property Name="PersonId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Lesson" Relationship="Self.FK_Lesson_Teacher" FromRole="Teacher" ToRole="Lesson" />
           <NavigationProperty Name="Person" Relationship="Self.FK_Teacher_Person" FromRole="Teacher" ToRole="Person" />
         </EntityType>
         <EntityType Name="User">
@@ -451,6 +469,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Lesson_Teacher">
+          <End Role="Teacher" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="Lesson" Type="Self.Lesson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teacher">
+              <PropertyRef Name="PersonId" />
+            </Principal>
+            <Dependent Role="Lesson">
+              <PropertyRef Name="TeacherId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Student_Person">
           <End Role="Person" Type="Self.Person" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -505,7 +535,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="StudentAbsenceEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="StudentAbsenceEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Attendance" EntityType="Self.Attendance" />
           <EntitySet Name="Faculty" EntityType="Self.Faculty" />
           <EntitySet Name="Group" EntityType="Self.Group" />
@@ -537,6 +567,10 @@
             <End Role="Subject" EntitySet="Subject" />
             <End Role="Lesson" EntitySet="Lesson" />
           </AssociationSet>
+          <AssociationSet Name="FK_Lesson_Teacher" Association="Self.FK_Lesson_Teacher">
+            <End Role="Teacher" EntitySet="Teacher" />
+            <End Role="Lesson" EntitySet="Lesson" />
+          </AssociationSet>
           <AssociationSet Name="FK_Student_Person" Association="Self.FK_Student_Person">
             <End Role="Person" EntitySet="Person" />
             <End Role="Student" EntitySet="Student" />
@@ -559,7 +593,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище StudentAbsenceModelContainer" CdmEntityContainer="StudentAbsenceEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище StudentAbsenceModelContainer" CdmEntityContainer="StudentAbsenceEntities1">
           <EntitySetMapping Name="Attendance">
             <EntityTypeMapping TypeName="StudentAbsenceModel.Attendance">
               <MappingFragment StoreEntitySet="Attendance">

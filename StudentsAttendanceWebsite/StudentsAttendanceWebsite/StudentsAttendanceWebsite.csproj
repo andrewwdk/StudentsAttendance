@@ -179,6 +179,7 @@
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LessonsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyProfileController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -194,6 +195,7 @@
     </Compile>
     <Compile Include="Models\CreateAndListFacultyModel.cs" />
     <Compile Include="Models\CreateAndListGroupModel.cs" />
+    <Compile Include="Models\CreateAndListLessonModel.cs" />
     <Compile Include="Models\CreateAndListSubjectModel.cs" />
     <Compile Include="Models\Faculty.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
@@ -207,6 +209,7 @@
     <Compile Include="Models\Lesson.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LessonMetaData.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Person.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
@@ -344,6 +347,7 @@
     <Content Include="Views\Subjects\Index.cshtml" />
     <Content Include="Views\Groups\Index.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Lessons\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
