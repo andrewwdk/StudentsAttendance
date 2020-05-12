@@ -181,6 +181,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyProfileController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\SubjectsController.cs" />
     <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -191,6 +192,7 @@
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CreateAndListFacultyModel.cs" />
+    <Compile Include="Models\CreateAndListSubjectModel.cs" />
     <Compile Include="Models\Faculty.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
@@ -233,6 +235,7 @@
     <Compile Include="Models\Subject.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SubjectMetaData.cs" />
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
@@ -335,6 +338,7 @@
     <Content Include="Views\Shared\StudentShortInfo.cshtml" />
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Faculties\Index.cshtml" />
+    <Content Include="Views\Subjects\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

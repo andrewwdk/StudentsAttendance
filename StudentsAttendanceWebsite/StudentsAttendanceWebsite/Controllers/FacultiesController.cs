@@ -36,7 +36,7 @@ namespace StudentsAttendanceWebsite.Controllers
                 db.Faculty.Add(model.NewFaculty);
                 db.SaveChanges();
                 var result = db.Faculty.Select(s => s).OrderBy(s => s.Name).ToList();
-                return View("Index", new CreateAndListFacultyModel() { NewFaculty = new Faculty(), Faculties = result });
+                return RedirectToAction("Index");
             }
 
             var list = db.Faculty.Select(s => s).OrderBy(s => s.Name).ToList();
