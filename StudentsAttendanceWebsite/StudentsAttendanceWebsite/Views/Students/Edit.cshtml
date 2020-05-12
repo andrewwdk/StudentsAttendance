@@ -1,0 +1,119 @@
+﻿@model StudentsAttendanceWebsite.Models.Student
+
+@functions{
+    string GetCorectDate()
+    {
+        if (Model.BirthDate == null)
+        {
+            return null;
+        }
+
+        string day = Model.BirthDate.Day.ToString();
+        if (day.Length == 1)
+        {
+            day = "0" + day;
+        }
+        string month = Model.BirthDate.Month.ToString();
+        if (month.Length == 1)
+        {
+            month = "0" + month;
+        }
+
+        return Model.BirthDate.Year.ToString() + "-" + month + "-" + day;
+    }
+}
+
+    <style>
+        .main-part {
+            text-align: center;
+            width:80%;
+        }
+
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .input-font-size {
+            font-size: 20px;
+            text-align:center;
+            width: 50%;
+        }
+
+        .options {
+            width: 20%;
+            background-color: aqua;
+        }
+
+        .right-from-photo-part {
+            width: 100%;
+            margin-left: 180px;
+        }
+
+        .rest-part {
+            width: 100%;
+        }
+
+        .float-unset {
+            float: unset;
+        }
+
+        .float-left {
+            float: left;
+        }
+
+        .my-label {
+            font-size: 20px;
+            padding-top: 8px;
+            padding-right: 30px;
+            text-align: right;
+        }
+    </style>
+
+<div class="main-container">
+    <div class="options">
+        @Html.Partial("UserOptions")
+    </div>
+    <div class="main-part">
+        <h2>Редактирование студента</h2>
+
+        @using (Html.BeginForm("Edit", "Students", null, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.PersonId)
+            <div class="form-horizontal main-container">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="right-from-photo-part">
+                    <div class="form-group">
+                        <h3>@Model.FullName</h3>
+                    </div>
+                    <div style="display:flex;flex-direction:row;width:100%;flex-wrap:wrap;justify-content:center;margin:10px 0;">
+                        @Html.LabelFor(model => model.GroupId, htmlAttributes: new { @class = "my-label" })
+                        @Html.DropDownListFor(model => model.GroupId, (SelectList)ViewBag.Groups, "Выберите группу", new { @class = "form-control input-font-size", @style = "height:auto;" })
+                        @Html.ValidationMessageFor(model => model.GroupId, "", new { @class = "text-danger" })
+                    </div>
+                    <div style="display:flex;flex-direction:row;width:100%;flex-wrap:wrap;justify-content:center;margin:10px 0;">
+                        @Html.LabelFor(model => model.RecordBookNumber, htmlAttributes: new { @class = "my-label" })
+                        @Html.EditorFor(model => model.RecordBookNumber, new { htmlAttributes = new { @class = "form-control input-font-size" } })
+                        @Html.ValidationMessageFor(model => model.RecordBookNumber, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div style="display:flex;flex-direction:row;width:100%;flex-wrap:wrap;justify-content:center;margin:10px 0;">
+                        @Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "my-label" })
+                        <input class="form-control input-font-size text-box single-line" data-val="true" data-val-date="Поле Дата рождения должно содержать дату."
+                               id="BirthDate" name="BirthDate" type="date" value="@GetCorectDate()">
+                        @Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="rest-part">
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Сохранить" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

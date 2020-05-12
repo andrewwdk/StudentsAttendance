@@ -29,5 +29,36 @@ namespace StudentsAttendanceWebsite.Controllers
             var student = db.Student.First(p => p.PersonId == id);
             return View(student);
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var db = new StudentAbsenceEntities();
+            var student = db.Student.First(c => c.PersonId == id);
+            ViewBag.Groups = new SelectList(db.Group, "Id", "Name", student.GroupId);
+            return View(student);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Student model)
+        {
+            var db = new StudentAbsenceEntities();
+
+            if (ModelState.IsValid)
+            {
+                var student = db.Student.First(c => c.PersonId == model.PersonId);
+                if (student != null)
+                {
+                    student.GroupId = model.GroupId;
+                    student.RecordBookNumber = model.RecordBookNumber;
+                    student.BirthDate = model.BirthDate;
+                }
+                db.SaveChanges();
+                return RedirectToAction("Edit", new { id = model.PersonId});
+            }
+            model.Person = db.Person.First(p => p.Id == model.PersonId);
+            ViewBag.Groups = new SelectList(db.Group, "Id", "Name", model.GroupId);
+            return View(model);
+        }
     }
 }

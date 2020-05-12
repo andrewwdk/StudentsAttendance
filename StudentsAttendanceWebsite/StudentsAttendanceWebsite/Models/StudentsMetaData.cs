@@ -21,7 +21,7 @@ namespace StudentsAttendanceWebsite.Models
     {
         [Required]
         [Display(Name = "Зачётная книжка")]
-        [MaxLength(10, ErrorMessage = "Длина номера зачётной книжки не должна превышать 10 символов!")]
+        [MaxLength(7, ErrorMessage = "Длина номера зачётной книжки не должна превышать 7 символов!")]
         [MinLength(7, ErrorMessage = "Длина номера зачётной книжки не должна меньше 7 символов!")]
         public string RecordBookNumber { get; set; }
 
