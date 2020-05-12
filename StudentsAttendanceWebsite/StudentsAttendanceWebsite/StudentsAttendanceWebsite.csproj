@@ -179,6 +179,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyProfileController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\TeachersController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -224,6 +226,7 @@
       <DependentUpon>StudentsAttendanceDbModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\StudentsAttendanceEntitiesMethods.cs" />
+    <Compile Include="Models\StudentsMetaData.cs" />
     <Compile Include="Models\Subject.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
@@ -233,6 +236,7 @@
     <Compile Include="Models\Teacher.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TeacherMetaData.cs" />
     <Compile Include="Models\User.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
@@ -323,6 +327,10 @@
     <Content Include="Views\Shared\PersonShortInfo.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Teachers\Index.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Shared\StudentShortInfo.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,33 @@
+﻿@model StudentsAttendanceWebsite.Models.Student
+
+<style>
+    .element {
+        margin: 20px;
+        background-color: darkkhaki;
+        font-size: 20px;
+        flex-wrap: wrap;
+    }
+    .input-font-size {
+        font-size: 20px;
+    }
+</style>
+
+<div class="element" style="display:flex;padding:20px;">
+    <div style="width:100%;display:flex;flex-wrap:wrap;">
+        <div style="width:100%;text-align:center;">
+            <div>@Model.FullName</div>
+        </div>
+        <div style="width:100%;">
+            <div style="margin-bottom:10px;">Дата рождения: @Model.BirthDate</div>
+            <div style="margin-bottom:10px;">Группа: @((Model.Group == null) ? "Не определена" : Model.Group.Name)</div>
+            <div style="margin-bottom:10px;">Зачётная книжка: @Model.RecordBookNumber</div>
+        </div>
+        <div style="width:100%;text-align:center;">
+            @if (User.IsInRole("Администратор"))
+            {
+                <a class="btn btn-default" href="/students/edit/@Model.PersonId">Изменить</a>
+            }
+            <a class="btn btn-default" href="/students/details/@Model.PersonId">Подробнее</a>
+        </div>
+    </div>
+</div>
