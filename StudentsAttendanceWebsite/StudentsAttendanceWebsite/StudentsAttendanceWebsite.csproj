@@ -177,6 +177,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyProfileController.cs" />
@@ -192,6 +193,7 @@
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CreateAndListFacultyModel.cs" />
+    <Compile Include="Models\CreateAndListGroupModel.cs" />
     <Compile Include="Models\CreateAndListSubjectModel.cs" />
     <Compile Include="Models\Faculty.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
@@ -200,6 +202,7 @@
     <Compile Include="Models\Group.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\GroupMetaData.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lesson.cs">
       <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
@@ -339,6 +342,7 @@
     <Content Include="Views\Students\Details.cshtml" />
     <Content Include="Views\Faculties\Index.cshtml" />
     <Content Include="Views\Subjects\Index.cshtml" />
+    <Content Include="Views\Groups\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

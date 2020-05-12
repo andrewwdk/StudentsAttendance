@@ -20,5 +20,18 @@ namespace StudentsAttendanceWebsite.Models
 
             return true;
         }
+
+        public bool IsGroupUnique(string name)
+        {
+            foreach (var group in Group)
+            {
+                if (group.Name == name)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
     }
 }
