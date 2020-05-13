@@ -21,5 +21,39 @@ namespace StudentsAttendanceWebsite.Controllers
             var result = teachers.OrderBy(p => p.Person.Surname).ToList().ToPagedList(page ?? 1, 3);
             return View(result);
         }
+
+        public ActionResult Groups()
+        {
+            var db = new StudentAbsenceEntities();
+            var user = db.User.First(u => u.login == User.Identity.Name);
+            var person = user.Person;
+            var lessons = db.Lesson.Where(l => l.TeacherId == person.Id).ToList();
+            return View(GetDistictGroups(lessons));
+        }
+
+        public ActionResult GroupLessons(int id)
+        {
+            var db = new StudentAbsenceEntities();
+            var user = db.User.First(u => u.login == User.Identity.Name);
+            var person = user.Person;
+            var lessons = db.Lesson.Where(l => l.TeacherId == person.Id && l.GroupId == id).ToList();
+            return View(lessons);
+        }
+
+        private List<Group> GetDistictGroups(List<Lesson> lessons)
+        {
+            var list = new List<Group>();
+            if(lessons != null)
+            {
+                foreach(var lesson in lessons)
+                {
+                    if (!list.Contains(lesson.Group))
+                    {
+                        list.Add(lesson.Group);
+                    }
+                }
+            }
+            return list;
+        }
     }
 }

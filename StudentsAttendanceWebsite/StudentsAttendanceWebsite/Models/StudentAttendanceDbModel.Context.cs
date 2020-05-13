@@ -16,7 +16,7 @@ namespace StudentsAttendanceWebsite.Models
     public partial class StudentAbsenceEntities : DbContext
     {
         public StudentAbsenceEntities()
-            : base("name=StudentAbsenceEntities")
+            : base("name=StudentAbsenceEntities2")
         {
         }
     

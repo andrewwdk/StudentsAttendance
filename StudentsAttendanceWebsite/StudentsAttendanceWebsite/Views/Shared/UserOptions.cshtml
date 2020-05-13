@@ -11,11 +11,13 @@
         <li><a class="text-uppercase" href="/groups/index">Группы</a></li>
         <li><a class="text-uppercase" href="/lessons/index">Занятия</a></li>
     }
-    @if (User.IsInRole("Учитель"))
+    @if (User.IsInRole("Преподаватель"))
     {
+        <li><a class="text-uppercase" href="/teachers/groups">Мои группы</a></li>
     }
-    @if (User.IsInRole("Ученик"))
+    @if (User.IsInRole("Студент"))
     {
+        <li><a class="text-uppercase" href="/students/absence">Мои пропуски</a></li>
     }
 
 </ul>

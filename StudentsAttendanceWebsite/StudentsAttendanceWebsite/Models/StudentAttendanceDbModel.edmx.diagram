@@ -4,19 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d8407ec8c7ef4fc4882d7e046984bf17" Name="Diagram1">
-        <EntityTypeShape EntityType="StudentAbsenceModel.Attendance" Width="1.5" PointX="7.5" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentAbsenceModel.Faculty" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentAbsenceModel.Group" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentAbsenceModel.Lesson" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+      <Diagram DiagramId="edcbff51f2cf48a1b9ae0b6b4a27bc5a" Name="Diagram1">
+        <EntityTypeShape EntityType="StudentAbsenceModel.Attendance" Width="1.5" PointX="7.5" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentAbsenceModel.Faculty" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentAbsenceModel.Group" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentAbsenceModel.Lesson" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentAbsenceModel.Person" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentAbsenceModel.Role" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentAbsenceModel.Role" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentAbsenceModel.Student" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentAbsenceModel.Subject" Width="1.5" PointX="3" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentAbsenceModel.Subject" Width="1.5" PointX="3" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentAbsenceModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentAbsenceModel.Teacher" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentAbsenceModel.User" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentAbsenceModel.Teacher" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="StudentAbsenceModel.User" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
         <AssociationConnector Association="StudentAbsenceModel.FK_Attendance_Lesson" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentAbsenceModel.FK_Attendance_Student" ManuallyRouted="false" />
         <AssociationConnector Association="StudentAbsenceModel.FK_Group_Faculty" ManuallyRouted="false" />
         <AssociationConnector Association="StudentAbsenceModel.FK_Lesson_Group" ManuallyRouted="false" />
         <AssociationConnector Association="StudentAbsenceModel.FK_Student_Group" ManuallyRouted="false" />

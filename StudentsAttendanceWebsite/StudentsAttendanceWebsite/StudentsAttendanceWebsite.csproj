@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AttendanceController.cs" />
     <Compile Include="Controllers\FacultiesController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -191,66 +192,68 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Attendance.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AttendanceMetaData.cs" />
+    <Compile Include="Models\CreateAndListAttendanceModel.cs" />
     <Compile Include="Models\CreateAndListFacultyModel.cs" />
     <Compile Include="Models\CreateAndListGroupModel.cs" />
     <Compile Include="Models\CreateAndListLessonModel.cs" />
     <Compile Include="Models\CreateAndListSubjectModel.cs" />
     <Compile Include="Models\Faculty.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FacultyMetaData.cs" />
     <Compile Include="Models\Group.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\GroupMetaData.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lesson.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LessonMetaData.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Person.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PersonMetaData.cs" />
     <Compile Include="Models\Role.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Student.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StudentsAttendanceDbModel.Context.cs">
+    <Compile Include="Models\StudentAttendanceDbModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsAttendanceDbModel.Context.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StudentsAttendanceDbModel.cs">
+    <Compile Include="Models\StudentAttendanceDbModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\StudentsAttendanceDbModel.Designer.cs">
+    <Compile Include="Models\StudentAttendanceDbModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>StudentsAttendanceDbModel.edmx</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\StudentsAttendanceEntitiesMethods.cs" />
     <Compile Include="Models\StudentsMetaData.cs" />
     <Compile Include="Models\Subject.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SubjectMetaData.cs" />
     <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Teacher.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TeacherMetaData.cs" />
     <Compile Include="Models\User.cs">
-      <DependentUpon>StudentsAttendanceDbModel.tt</DependentUpon>
+      <DependentUpon>StudentAttendanceDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -269,24 +272,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\StudentsAttendanceDbModel.Context.tt">
+    <Content Include="Models\StudentAttendanceDbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StudentsAttendanceDbModel.edmx</DependentUpon>
-      <LastGenOutput>StudentsAttendanceDbModel.Context.cs</LastGenOutput>
+      <DependentUpon>StudentAttendanceDbModel.edmx</DependentUpon>
+      <LastGenOutput>StudentAttendanceDbModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\StudentsAttendanceDbModel.tt">
+    <Content Include="Models\StudentAttendanceDbModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StudentsAttendanceDbModel.edmx</DependentUpon>
-      <LastGenOutput>StudentsAttendanceDbModel.cs</LastGenOutput>
+      <DependentUpon>StudentAttendanceDbModel.edmx</DependentUpon>
+      <LastGenOutput>StudentAttendanceDbModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\StudentsAttendanceDbModel.edmx">
+    <EntityDeploy Include="Models\StudentAttendanceDbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StudentsAttendanceDbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>StudentAttendanceDbModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\StudentsAttendanceDbModel.edmx.diagram">
-      <DependentUpon>StudentsAttendanceDbModel.edmx</DependentUpon>
+    <Content Include="Models\StudentAttendanceDbModel.edmx.diagram">
+      <DependentUpon>StudentAttendanceDbModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -348,6 +351,9 @@
     <Content Include="Views\Groups\Index.cshtml" />
     <Content Include="Views\Students\Edit.cshtml" />
     <Content Include="Views\Lessons\Index.cshtml" />
+    <Content Include="Views\Teachers\Groups.cshtml" />
+    <Content Include="Views\Teachers\GroupLessons.cshtml" />
+    <Content Include="Views\Attendance\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
