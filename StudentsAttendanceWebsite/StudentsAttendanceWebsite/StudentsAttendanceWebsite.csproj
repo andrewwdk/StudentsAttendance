@@ -354,6 +354,7 @@
     <Content Include="Views\Teachers\Groups.cshtml" />
     <Content Include="Views\Teachers\GroupLessons.cshtml" />
     <Content Include="Views\Attendance\Create.cshtml" />
+    <Content Include="Views\Students\Absence.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

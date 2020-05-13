@@ -60,5 +60,14 @@ namespace StudentsAttendanceWebsite.Controllers
             ViewBag.Groups = new SelectList(db.Group, "Id", "Name", model.GroupId);
             return View(model);
         }
+
+        public ActionResult Absence()
+        {
+            var db = new StudentAbsenceEntities();
+            var user = db.User.First(u => u.login == User.Identity.Name);
+            var person = user.Person;
+            var absences = db.Attendance.Where(a => a.StudentId == person.Id);
+            return View(absences);
+        }
     }
 }

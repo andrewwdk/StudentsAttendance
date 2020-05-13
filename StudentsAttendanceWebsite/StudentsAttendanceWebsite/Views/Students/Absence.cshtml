@@ -1,0 +1,62 @@
+﻿@model IEnumerable<StudentsAttendanceWebsite.Models.Attendance>
+
+<style>
+    .main-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .main-content {
+        margin: 20px 28%;
+        font-size: 20px;
+    }
+
+    .main-part {
+        width: 80%;
+        text-align: center;
+    }
+
+    .options {
+        width: 20%;
+        background-color: aqua;
+    }
+
+    .person-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 15%;
+    }
+
+    .search-box {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .input-font-size {
+        font-size: 20px;
+        width: 350px;
+        margin-right: 30px;
+    }
+</style>
+
+<div class="main-container">
+    <div class="options">
+        @Html.Partial("UserOptions")
+    </div>
+    <div class="main-part">
+        <div class="person-container">
+            <div class="form-horizontal main-container">
+                <div class="main-content">
+                    @for (int i = 0; i < Model.Count(); i++)
+                    {
+                        <div style="display:flex;flex-direction:row;width:600px;">
+                            <div> @Html.DisplayFor(model => model.ElementAt(i).FullInfo) </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
